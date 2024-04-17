@@ -50,8 +50,33 @@ const GlobalStyles = createGlobalStyle`
     body {
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
+      overflow: hidden;
     }
   `}
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%;
+    }
+
+    body {
+      position: relative;
+    }
+  }
+
+  @media (max-width: 59em) {
+    html {
+      font-size: 50%;
+    }
+  }
 
 `
 
