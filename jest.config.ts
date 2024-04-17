@@ -1,6 +1,6 @@
-import type { Config } from 'jest'
+import type { JestConfigWithTsJest } from 'ts-jest'
 
-const config: Config = {
+const config: JestConfigWithTsJest = {
   clearMocks: true,
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
@@ -13,6 +13,7 @@ const config: Config = {
     '!src/styles/**',
     '!src/types/**'
   ],
+  preset: 'ts-jest',
   coveragePathIgnorePatterns: ['/node_modules/'],
   coverageProvider: 'v8',
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
@@ -26,7 +27,8 @@ const config: Config = {
   // we should to force it to use the browser version
   moduleNameMapper: {
     '^styled-components':
-      'styled-components/dist/styled-components.browser.cjs.js'
+      'styled-components/dist/styled-components.browser.cjs.js',
+    '^@/(.*)$': '<rootDir>/src/$1'
   }
 }
 
