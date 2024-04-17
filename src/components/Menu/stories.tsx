@@ -1,11 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Main from '.'
+import Menu from '.'
 
 export default {
-  title: 'Main',
-  component: Main,
+  title: 'Menu',
+  component: Menu,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 
