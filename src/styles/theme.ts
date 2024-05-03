@@ -34,15 +34,18 @@ export default {
       large: '1.8rem',
       xlarge: '3.0rem',
       xxlarge: '4.4rem',
-      huge: '5.2rem'
+      huge: '5.2rem',
+      xhuge: '8.6rem'
     }
   },
   line: {
-    small: '1.4rem',
-    medium: '1.6rem',
-    large: '1.8rem',
-    xlarge: '2.0rem',
-    xxlarge: '2.8rem'
+    xxsmall: '1.05',
+    xsmall: '1.2',
+    small: '1.4',
+    medium: '1.6',
+    large: '1.8',
+    xlarge: '2.0',
+    xxlarge: '2.8'
   },
   colors: {
     colorBackground: '#fdf2e9',
@@ -51,6 +54,7 @@ export default {
     primary: '#e67e22',
     shade: '#cf711f',
     shadeDark: '#45260a',
+    greyLight: '#bbb',
     greyMedium: '#6f6f6f',
     greyMediumDark: '#555',
     greyDark: '#888',
@@ -80,5 +84,12 @@ export default {
   transition: {
     default: '0.3s ease-in-out',
     fast: '0.1s ease-in-out'
+  },
+  media: {
+    desktop: '84em',
+    laptop: '75em',
+    tablet: '59em',
+    phone: '44em',
+    smallPhone: '34em'
   }
 } as const

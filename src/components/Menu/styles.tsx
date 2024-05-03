@@ -11,7 +11,24 @@ export const Wrapper = styled.header`
     position: relative;
     height: ${theme.spacings.spacing11};
     padding: 0 ${theme.spacings.spacing08};
+
+    @media (max-width: ${theme.media.laptop}) {
+      padding: 0 ${theme.spacings.spacing07};
+    }
   `}
+
+  .sticky & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    z-index: 9999;
+    box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+  }
 `
 
 type MenuProps = {
@@ -20,9 +37,8 @@ type MenuProps = {
 
 export const MenuNav = styled.nav<MenuProps>`
   display: flex;
-
-  @media (max-width: 59em) {
-    ${({ $isOpen }) => css`
+  ${({ theme, $isOpen }) => css`
+    @media (max-width: ${theme.media.tablet}) {
       background-color: rgba(255, 255, 255, 0.9);
       opacity: ${$isOpen ? 1 : 0};
       position: absolute;
@@ -37,8 +53,8 @@ export const MenuNav = styled.nav<MenuProps>`
       transition: all 0.5s ease-in;
       pointer-events: ${$isOpen ? 'all' : 'none'};
       visibility: ${$isOpen ? 'visible' : 'hidden'};
-    `}
-  }
+    }
+  `}
 `
 
 export const List = styled.ul`
@@ -46,14 +62,16 @@ export const List = styled.ul`
     display: flex;
     flex-direction: row;
     gap: ${theme.spacings.spacing08};
-  `}
 
-  @media (max-width: 59em) {
-    ${({ theme }) => css`
+    @media (max-width: ${theme.media.laptop}) {
+      gap: ${theme.spacings.spacing07};
+    }
+
+    @media (max-width: ${theme.media.tablet}) {
       flex-direction: column;
       gap: ${theme.spacings.spacing08};
-    `}
-  }
+    }
+  `}
 `
 
 export const Item = styled.li`
@@ -64,6 +82,7 @@ export const Item = styled.li`
 
 export const StyledLink = styled.a`
   ${({ theme }) => css`
+    cursor: pointer;
     font-size: ${theme.font.sizes.large};
     font-weight: 500;
     color: ${theme.colors.greyVeryDark};
@@ -71,11 +90,11 @@ export const StyledLink = styled.a`
     &:hover {
       color: ${theme.colors.shade};
     }
-  `}
 
-  @media (max-width: 59em) {
-    font-size: 3rem;
-  }
+    @media (max-width: ${theme.media.tablet}) {
+      font-size: 3rem;
+    }
+  `}
 `
 
 export const LinkCta = styled.a`
@@ -93,25 +112,26 @@ export const LinkCta = styled.a`
     &:active {
       background-color: ${theme.colors.shade};
     }
+
+    @media (max-width: ${theme.media.tablet}) {
+      font-size: ${theme.font.sizes.xlarge};
+    }
   `}
 
-  @media (max-width: 59em) {
-    ${({ theme }) => css`
-      font-size: ${theme.font.sizes.xlarge};
-    `}
   }
 `
 
 export const IconWrapper = styled.div`
-  display: none;
-  @media (max-width: 59em) {
-    ${({ theme }) => css`
+  ${({ theme }) => css`
+    display: none;
+
+    @media (max-width: ${theme.media.tablet}) {
       width: 4.8rem;
       height: 4.8rem;
       z-index: ${theme.layers.alwaysOnTop};
       display: block;
-    `}
-  }
+    }
+  `}
 `
 
 export const MenuIcon = styled(Menu)<MenuProps>`

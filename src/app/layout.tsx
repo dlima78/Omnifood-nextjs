@@ -1,7 +1,34 @@
 import type { Metadata } from 'next'
 
-import StyledComponentsRegistry from '@/lib/registry'
+import StyledComponentsRegistry from './lib/registry'
 import { Providers } from './providers'
+import localFont from 'next/font/local'
+
+const rubik = localFont({
+  src: [
+    {
+      path: '../../public/fonts/rubik-v28-latin-regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../../public/fonts/rubik-v28-latin-500.woff2',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../../public/fonts/rubik-v28-latin-600.woff2',
+      weight: '600',
+      style: 'normal'
+    },
+    {
+      path: '../../public/fonts/rubik-v28-latin-700.woff2',
+      weight: '700',
+      style: 'normal'
+    }
+  ],
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={rubik.className}>
       <body>
         <StyledComponentsRegistry>
           <Providers>{children}</Providers>

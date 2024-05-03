@@ -5,7 +5,7 @@ export default {
   title: 'Logo',
   component: Logo,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'centered'
   }
 } as Meta
 

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 
-const StyledLink = styled(Link)``
+const Link = styled.a``
 
 const LogoImage = styled.img`
   height: 2.2rem;
@@ -9,9 +8,9 @@ const LogoImage = styled.img`
 
 function Logo() {
   return (
-    <StyledLink href="#">
+    <Link href="#">
       <LogoImage src="/images/omnifood-logo.png" alt="Logo" />
-    </StyledLink>
+    </Link>
   )
 }
 
